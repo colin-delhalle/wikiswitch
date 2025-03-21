@@ -1,0 +1,6 @@
+dist/
+node_modules
+extension/**/*.zip
+extension/src/
+extension/web-ext-artifacts
+sources.zip

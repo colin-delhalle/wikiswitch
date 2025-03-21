@@ -1,0 +1,15 @@
+{
+	"files": {
+		"ignore": ["./extension/src/**"]
+	},
+	"formatter": {
+		"lineEnding": "crlf"
+	},
+	"linter": {
+		"rules": {
+			"style": {
+				"noNonNullAssertion": "off"
+			}
+		}
+	}
+}
