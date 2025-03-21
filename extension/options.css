@@ -1,0 +1,36 @@
+.flex {
+	display: flex;
+}
+
+#main {
+	width: 1200px;
+	margin: auto;
+}
+
+#main-title {
+	border-bottom: solid 3px;
+	padding-bottom: 8px;
+	margin-bottom: 16px;
+}
+
+#languages {
+	min-height: 200px;
+	width: 25%;
+}
+
+#languages > li {
+	cursor: move;
+	list-style-type: none;
+	margin-top: 8px;
+}
+
+#available-languages {
+	display: flex;
+	flex-wrap: wrap;
+	row-gap: 12px;
+	margin-bottom: 40px;
+}
+
+#available-languages > span {
+	width: 200px;
+}

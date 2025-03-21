@@ -1,0 +1,30 @@
+{
+	"name": "wikiswitch",
+	"version": "1.0.0",
+	"description": "Firefox extension to quickly see Wikipedia page title in different languages",
+	"homepage": "https://github.com/colin-delhalle/wikiswitch/",
+	"bugs": "https://github.com/colin-delhalle/wikiswitch/issues",
+	"author": {
+		"name": "Colin Delhalle"
+	},
+	"type": "module",
+	"devDependencies": {
+		"@biomejs/biome": "^1.9.4",
+		"@types/webextension-polyfill": "^0.12.3",
+		"typescript": "^5.8.2",
+		"vite": "^6.2.2",
+		"vite-plugin-checker": "^0.9.0",
+		"webextension-polyfill": "^0.12.0"
+	},
+	"scripts": {
+		"build": "vite build",
+		"dev": "vite build --watch --mode development",
+		"start": "cd extension && web-ext run --url https://www.google.com/search?q=common+octopus --devtools",
+		"lint": "biome check --fix --config-path=biome.json",
+		"validate": "web-ext lint -s extension/",
+		"package": "pnpm build && rm -rf dist/ && cd extension && web-ext build --overwrite-dest --artifacts-dir ../dist",
+		"zip-sources": "rm -rf sources.zip extension/src && 7z a sources.zip readme-testers.txt tsconfig.json package.json vite.config.ts pnpm-lock.yaml src/ extension/",
+		"publish-extension": "pnpm run package && pnpm validate && pnpm run zip-sources"
+	},
+	"packageManager": "pnpm@10.3.0+sha512.ee592eda8815a8a293c206bb0917c4bb0ff274c50def7cbc17be05ec641fc2d1b02490ce660061356bd0d126a4d7eb2ec8830e6959fb8a447571c631d5a2442d"
+}
